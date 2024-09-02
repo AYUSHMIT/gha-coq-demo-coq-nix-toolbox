@@ -1,0 +1,70 @@
+---
+fullname: gha-coq-demo-coq-nix-toolbox
+shortname: coq-demo
+opam_name: coq-demo
+organization: erikmd
+community: false
+action: true
+dune: false
+coqdoc: false
+nix: true
+
+synopsis: GHA Demo
+
+description: |-
+  Demo using GHA.
+
+authors:
+- name: Erik Martin-Dorel
+  initial: true
+
+maintainers:
+- name: Erik Martin-Dorel
+  nickname: erikmd
+
+opam-file-maintainer: erik@martin-dorel.org
+
+opam-file-version: dev
+
+license:
+  fullname: MIT
+  identifier: MIT
+
+supported_coq_versions:
+  text: 8.19 or later
+  opam: '{>= "8.19"}'
+
+tested_coq_opam_versions:
+- version: '8.19'
+- version: '2.2.0-coq-8.19'
+  repo: 'mathcomp/mathcomp'
+
+tested_coq_nix_versions:
+  - coq_version: 'v8.19'
+    extra_dev_dependencies:
+      - nix_name: mathcomp
+        dev_version: 'mathcomp-2.2.0'
+
+namespace: Demo
+
+keywords:
+- name: continuous integration
+
+build: |-
+  ## Building and installation instructions
+
+  To build and install manually, do:
+  ``` shell
+  git clone https://github.com/erikmd/gha-coq-demo-coq-nix-toolbox.git
+  cd gha-coq-demo-coq-nix-toolbox
+  coq_makefile -f _CoqProject -o Makefile
+  make   # or make -j <number-of-cores-on-your-machine>
+  make install
+  ```
+
+documentation: |-
+  ## Documentation
+
+  coq-demo consists of one theory and one test file, using definitions
+  and lemmas from the coq-mathcomp-ssreflect library.
+---
