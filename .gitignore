@@ -94,6 +94,10 @@ nlia.cache
 nra.cache
 
 ### Misc
-Makefile
 Makefile.conf
 .coqdeps.d
+Makefile.coq
+Makefile.coq.conf
+.Makefile.coq.d
+*.vok
+*.vos

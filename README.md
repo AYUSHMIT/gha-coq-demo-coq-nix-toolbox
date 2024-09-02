@@ -35,7 +35,6 @@ To build and install manually, do:
 ``` shell
 git clone https://github.com/erikmd/gha-coq-demo-coq-nix-toolbox.git
 cd gha-coq-demo-coq-nix-toolbox
-coq_makefile -f _CoqProject -o Makefile
 make   # or make -j <number-of-cores-on-your-machine>
 make install
 ```
