@@ -1,6 +1,6 @@
 ---
 fullname: gha-coq-demo-coq-nix-toolbox
-shortname: coq-demo
+shortname: gha-coq-demo-coq-nix-toolbox
 opam_name: coq-demo
 organization: erikmd
 community: false
@@ -33,6 +33,13 @@ license:
 supported_coq_versions:
   text: 8.19 or later
   opam: '{>= "8.19"}'
+
+dependencies:
+  - opam:
+      name: coq-mathcomp-ssreflect
+      version: '{>= "2.0"}'
+    description: |-
+      [MathComp](https://math-comp.github.io) 2.0 or later (`ssreflect` suffices)
 
 tested_coq_opam_versions:
 - version: '8.19'

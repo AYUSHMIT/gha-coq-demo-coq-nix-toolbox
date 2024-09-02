@@ -1,3 +1,6 @@
+# This file was generated from `meta.yml`, please do not edit manually.
+# Follow the instructions on https://github.com/coq-community/templates to regenerate.
+
 opam-version: "2.0"
 maintainer: "erik@martin-dorel.org"
 version: "dev"
@@ -9,23 +12,18 @@ license: "MIT"
 
 synopsis: "GHA Demo"
 description: """
-Demo using GHA.
-"""
+Demo using GHA."""
 
-build: [
-  ["sh" "-c" "coq_makefile -f _CoqProject -o Makefile"]
-  [make "-j%{jobs}%"]
-]
+build: [make "-j%{jobs}%"]
 install: [make "install"]
-
-run-test: [make "test"]
-
 depends: [
-  "coq" {= "8.19.2"}
-  "coq-mathcomp-ssreflect" {= "2.2.0"}
+  "coq" {>= "8.19"}
+  "coq-mathcomp-ssreflect" {>= "2.0"}
 ]
 
 tags: [
+  "keyword:continuous integration"
+  "logpath:Demo"
 ]
 authors: [
   "Erik Martin-Dorel"
