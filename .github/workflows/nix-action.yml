@@ -17,7 +17,7 @@ jobs:
     strategy:
       matrix:
         overrides:
-          - 'coq = "v8.19"; mathcomp = mathcomp-2.2.0'
+          - 'coq = "v8.19"; mathcomp = "mathcomp-2.2.0"'
       fail-fast: false
     steps:
       - name: Determine which commit to test
