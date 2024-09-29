@@ -42,5 +42,9 @@ jobs:
       - uses: actions/checkout@v3
         with:
           ref: ${{ env.tested_commit }}
-      - run: >
+      - run: |
+          NIXPKGS_ALLOW_UNFREE=1 nix-build https://github.com/coq-community/coq-nix-toolbox/archive/master.tar.gz --job "coq" --arg override '{ ${{ matrix.overrides }}'
+      - run: |
+          NIXPKGS_ALLOW_UNFREE=1 nix-build https://github.com/coq-community/coq-nix-toolbox/archive/master.tar.gz --job "mathcomp-ssreflect" --arg override '{ ${{ matrix.overrides }}'
+      - run: |
           nix-build https://github.com/coq-community/coq-nix-toolbox/archive/master.tar.gz --argstr job gha-coq-demo-coq-nix-toolbox --arg override '{ ${{ matrix.overrides }}; gha-coq-demo-coq-nix-toolbox = builtins.filterSource (path: _: baseNameOf path != ".git") ./.; }'
