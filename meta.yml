@@ -47,10 +47,10 @@ tested_coq_opam_versions:
   repo: 'mathcomp/mathcomp'
 
 tested_coq_nix_versions:
-  - coq_version: 'v8.19'
+  - coq_version: '8.19'
     extra_dev_dependencies:
       - nix_name: mathcomp
-        dev_version: 'mathcomp-2.2.0'
+        dev_version: '2.2.0'
 
 namespace: Demo
 
