@@ -43,5 +43,5 @@ jobs:
         with:
           ref: ${{ env.tested_commit }}
       - run: |
-          NIXPKGS_ALLOW_UNFREE=1 nix-build https://github.com/coq-community/coq-nix-toolbox/archive/master.tar.gz --no-out-link --argstr job gha-coq-demo-coq-nix-toolbox --arg config '{ buildInputs = [ "mathcomp-ssreflect" ]; }' --arg override '{ ${{ matrix.overrides }}; gha-coq-demo-coq-nix-toolbox = builtins.filterSource (path: _: baseNameOf path != ".git") ./.; }'
+          NIXPKGS_ALLOW_UNFREE=1 nix-build https://github.com/coq-community/coq-nix-toolbox/archive/master.tar.gz --no-out-link --arg config '{ attribute = "gha-coq-demo-coq-nix-toolbox"; propagatedBuildInputs = [ "mathcomp-ssreflect" ]; }' --arg override '{ ${{ matrix.overrides }}; gha-coq-demo-coq-nix-toolbox = builtins.filterSource (path: _: baseNameOf path != ".git") ./.; }'
           # no need for --arg bundle "8.19"
